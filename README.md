@@ -85,7 +85,9 @@ to_upper:(neoScript)
 length:(Programming)
 
 ```
-// Translated C++ Code
+### Translated C++ Code
+
+```neoscript
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -105,13 +107,15 @@ int main() {
     cout << str3.length() << endl;
     return 0;
 }
-
+```
+```neoscript
 ✅ Output
 30
 49
 dlroWolleH
 NEOSCRIPT
 11
+```
 
 🌟 Future Improvements
 
