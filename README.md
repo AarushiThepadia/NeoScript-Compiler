@@ -48,12 +48,12 @@ A beginner-friendly compiler that translates **NeoScript** into **C++**.
 ---
 
 ## 📐 Grammar  
-
+---
 S → F
 F → id : (A)
 A → V , A | V
 V → id | num | str
-
+---
 
 👉 Function calls follow the syntax:  
 
