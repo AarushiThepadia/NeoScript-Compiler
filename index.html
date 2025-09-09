@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeoScript Compiler</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #121212;
+      color: #00ffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #00ffff;
+    }
+
+    textarea {
+      width: 80%;
+      height: 200px;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      border: 1px solid #00ffff;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      resize: none;
+    }
+
+    .buttons {
+      margin-top: 15px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #compileBtn {
+      background-color: #00ffff;
+      color: #000;
+    }
+
+    #copyBtn {
+      background-color: orange;
+      color: black;
+    }
+
+    #downloadBtn {
+      background-color: #00ff88;
+      color: black;
+    }
+
+    #output {
+      width: 90%;
+      background-color: #1e1e1e;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+
+    .manual-section {
+      color: #ffffff;
+      background-color: #1e1e1e;
+      border: 1px solid #00ffff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">NeoScript Compiler</a>
+      <div class="collapse navbar-collapse show" id="navbarNavDropdown">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userManualDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              User Manual
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="userManualDropdown">
+              <li><a class="dropdown-item" href="#conceptNote">Concept Note</a></li>
+              <li><a class="dropdown-item" href="#functions">NeoScripts Functions</a></li>
+              <li><a class="dropdown-item" href="#grammar">Grammar of the Functions</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>NeoScript Compiler</h1>
+
+  <textarea id="neoInput" placeholder="Write NeoScript code here..."></textarea>
+
+  <div class="buttons">
+    <button id="compileBtn">Compile to C++</button>
+    <button id="copyBtn">Copy C++ Code</button>
+    <button id="downloadBtn">Download C++ Code</button>
+  </div>
+
+  <div id="output">// Your C++ output will appear here</div>
+
+  <div class="manual-section" id="conceptNote">
+    <h2>Concept Note</h2>
+    <p><strong>Compiler to Translate NeoScript into C++</strong></p>
+    <h5>Problem Statement</h5>
+    <p>Programming languages like C++, while powerful, can be challenging for beginners due to their complex syntax and strict structure. To address this, NeoScript is introduced as a simplified programming language, making coding more intuitive and accessible.</p>
+    <p>This project aims to develop a compiler that translates NeoScript code into C++, leveraging C++'s robust runtime environment while simplifying the programming experience for users.</p>
+    <h5>Approach to the Problem</h5>
+    <p>The first step in implementing the compiler involves defining NeoScript’s grammar, keywords, and syntax rules. These elements ensure that NeoScript remains simple and intuitive for users.</p>
+    <p>The compiler will follow a phased approach:</p>
+    <ul>
+      <li>Lexical Analysis – Tokenizing NeoScript source code.</li>
+      <li>Syntax Analysis – Validating grammar and structure.</li>
+      <li>Semantic Analysis – Checking logical consistency.</li>
+      <li>Code Generation – Producing equivalent C++ code.</li>
+    </ul>
+    <p>The design will feature a modular architecture, ensuring efficient translation across phases and including an error detection mechanism with user-friendly messages.</p>
+    <h5>Expected Output</h5>
+    <p>The expected outcome of this project is a fully functional compiler that translates NeoScript code into C++, enabling execution of NeoScript programs.</p>
+    <p>The compiler will feature user-friendly error messages to enhance usability and will include comprehensive documentation with examples and tutorials. This will provide an intuitive programming experience for users and demonstrate the capabilities of NeoScript alongside the functionality of the compiler.</p>
+  </div>
+
+  <div class="manual-section" id="functions">
+    <h2>NeoScript Functions</h2>
+    <ul>
+      <li><strong>add(a, b)</strong>: Adds two numbers.</li>
+      <li><strong>subtract(a, b)</strong>: Subtracts second number from first.</li>
+      <li><strong>multiply(a, b)</strong>: Multiplies two numbers.</li>
+      <li><strong>divide(a, b)</strong>: Divides first number by second.</li>
+      <li><strong>modulus(a, b)</strong>: Returns a modulo b.</li>
+      <li><strong>square(x)</strong>: Returns square of a number.</li>
+      <li><strong>cube(x)</strong>: Returns cube of a number.</li>
+      <li><strong>power(base, exp)</strong>: Raises base to exponent.</li>
+      <li><strong>sqrt(x)</strong>: Square root of x.</li>
+      <li><strong>abs(x)</strong>: Absolute value of x.</li>
+      <li><strong>concat(str1, str2)</strong>: Concatenates two strings.</li>
+      <li><strong>to_upper(str)</strong>: Converts string to uppercase.</li>
+      <li><strong>to_lower(str)</strong>: Converts string to lowercase.</li>
+      <li><strong>length(str)</strong>: Length of a string.</li>
+      <li><strong>reverse(str)</strong>: Reverses a string.</li>
+    </ul>
+  </div>
+  <div class="manual-section" id="grammar">
+    <h2>Grammar of the Functions</h2>
+    <p><strong>General Grammar:</strong></p>
+    <pre>
+S → F
+F → id : (A)
+A → V , A | V
+V → id | num | str
+    </pre>
+    <p>This grammar supports all defined NeoScript functions by allowing variable identifiers (id), numeric values (num), and string values (str) as parameters, with function calls using the syntax function_name: (param1, param2, ...).</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const functionMap = {
+      "add": "(a + b)",
+      "subtract": "(a - b)",
+      "multiply": "(a * b)",
+      "divide": "(a / b)",
+      "modulus": "(a % b)",
+      "square": "(x * x)",
+      "cube": "(x * x * x)",
+      "power": "pow(base, exp)",
+      "sqrt": "sqrt(x)",
+      "abs": "abs(x)",
+      "concat": "(str1 + str2)",
+      "to_upper": "toupper(c)",
+      "to_lower": "tolower(c)",
+      "length": "str.length()",
+      "reverse": "reverse(str.begin(), str.end())"
+    };
+
+    function compileNeoScript(code) {
+      let cppCode = "// Translated C++ Code\n";
+      cppCode += "#include <iostream>\n#include <cmath>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\n";
+      cppCode += "int main() {\n";
+      const lines = code.split("\n");
+
+      lines.forEach((line) => {
+        const match = line.match(/^(\w+)\s*:\s*\(([^)]+)\)/);
+        if (match) {
+          const command = match[1].trim().toLowerCase();
+          const args = match[2].split(",").map(s => s.trim());
+
+          if (functionMap[command]) {
+            let expr = functionMap[command];
+            switch (command) {
+              case "square":
+              case "cube":
+              case "sqrt":
+              case "abs":
+                expr = expr.replace(/x/g, args[0]);
+                cppCode += `    cout << ${expr} << endl;\n`;
+                break;
+              case "add":
+              case "subtract":
+              case "multiply":
+              case "divide":
+              case "modulus":
+                expr = expr.replace(/a/g, args[0]).replace(/b/g, args[1]);
+                cppCode += `    cout << ${expr} << endl;\n`;
+                break;
+              case "power":
+                expr = expr.replace(/base/g, args[0]).replace(/exp/g, args[1]);
+                cppCode += `    cout << ${expr} << endl;\n`;
+                break;
+              case "concat":
+                cppCode += `    string str1 = \"${args[0]}\", str2 = \"${args[1]}\";\n`;
+                cppCode += `    cout << ${expr} << endl;\n`;
+                break;
+              case "to_upper":
+              case "to_lower":
+              case "length":
+              case "reverse":
+                cppCode += `    string str = \"${args[0]}\";\n`;
+                if (command === "reverse") {
+                  cppCode += `    ${expr};\n    cout << str << endl;\n`;
+                } else if (command === "length") {
+                  cppCode += `    cout << ${expr} << endl;\n`;
+                } else {
+                  cppCode += `    for (char &c : str) c = ${expr};\n    cout << str << endl;\n`;
+                }
+                break;
+              default:
+                cppCode += `    // Not implemented: ${command}\n`;
+            }
+          } else {
+            cppCode += `    // Unknown command: ${line}\n`;
+          }
+        } else if (line.trim() !== "") {
+          cppCode += `    // Invalid syntax: ${line.trim()}\n`;
+        }
+      });
+
+      cppCode += "    return 0;\n}";
+      return cppCode;
+    }
+
+    document.getElementById("compileBtn").addEventListener("click", () => {
+      const neoCode = document.getElementById("neoInput").value;
+      const cppCode = compileNeoScript(neoCode);
+      document.getElementById("output").innerText = cppCode;
+    });
+
+    document.getElementById("copyBtn").addEventListener("click", () => {
+      const code = document.getElementById("output").innerText;
+      navigator.clipboard.writeText(code)
+        .then(() => alert("C++ code copied to clipboard!"))
+        .catch(err => alert("Failed to copy code: " + err));
+    });
+
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const code = document.getElementById("output").innerText;
+      const blob = new Blob([code], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "neoscript_translated.cpp";
+      link.click();
+    });
+  </script>
+</body>
+</html>
