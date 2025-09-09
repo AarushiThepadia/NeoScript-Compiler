@@ -70,13 +70,17 @@ Copy C++ Code → Copies to clipboard.
 
 Download C++ Code → Saves as neoscript_translated.cpp.
 
-📝 Example
-NeoScript Code
+## 📝 Example  
+
+### NeoScript Code  
+
+```neoscript
 add:(10, 20)
 square:(7)
 reverse:(HelloWorld)
 to_upper:(neoScript)
 length:(Programming)
+
 
 Generated C++ Code
 // Translated C++ Code
